@@ -65,10 +65,10 @@ $settings = array();
 $settings['FILE_CONTENTS_AUTOMATICALLY_GENERATED_BY_BAZINGA'] = 'DO *NOT* EDIT THIS FILE DIRECTLY';
 
 // iterate environment variables collect by namespace
-foreach($_ENV as $key => $value){ 
-	if(substr($key, 0, strlen($prefix))==$prefix) {		
-		$settings[substr($key, strlen($prefix))] = $value;
-	}
+foreach($_SERVER as $key => $value){ 
+    if(substr($key, 0, strlen($prefix))==$prefix) {     
+        $settings[substr($key, strlen($prefix))] = $value;
+    }
 }
 
 // bogus
