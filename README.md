@@ -10,9 +10,9 @@ Prerequisites
 Installation 
 -------------
 
-**Fetch sources**
-[Download](https://github.com/alternatex/bazinga/archive/master.zip) and extract to:
-/usr/bin/bazinga
+**Fetch sources** [https://github.com/alternatex/bazinga/archive/master.zip](https://github.com/alternatex/bazinga/archive/master.zip)
+
+**Extract to** /usr/bin/bazinga
 
 **Update environment variables**
 
