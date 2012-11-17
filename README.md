@@ -73,7 +73,7 @@ export bazinga_github_user_email="";
 1. load settings
 2. edit settings
 3. store settings
-4. post-process settings w/externals
+4. post-process settings w/externals (~/.netrc creation, ...)
 
 Usage
 -------------
