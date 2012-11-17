@@ -9,33 +9,24 @@ Black='\e[0;30m'; Red='\e[0;31m'; Green='\e[0;32m'; Yellow='\e[0;33m'; Blue='\e[
 # Bold
 BBlack='\e[1;30m'; BRed='\e[1;31m'; BGreen='\e[1;32m'; BYellow='\e[1;33m'; BBlue='\e[1;34m'; BPurple='\e[1;35m'; BCyan='\e[1;36m'; BWhite='\e[1;37m';       
 
-function title {
-	txtstr
+function bazinga_title {
+	bazinga_txtstr
 	echo "
 -----------------------------------------
 « $1 » 
 -----------------------------------------"
-	txtrst		
+	bazinga_txtrst		
 }
 
-function txtstr {
+function bazinga_txtstr {
 	printf "$BBlue"
 }
 
-function txtrst {
+function bazinga_txtrst {
 	printf "$Color_Off"
 }
 
-function txt {
-	txtstr
-	echo "
------------------------------------------
-« $1 »
------------------------------------------"
-	txtrst
-}
-
-txtstr
+bazinga_txtstr
 
 printf $BRed
 
@@ -73,9 +64,9 @@ message
 
 echo "-----------------------------------------------------------------------------"
 
-txtrst
+bazinga_txtrst
 
-title "script globals"
+bazinga_title "script globals"
 
 # environment variables
 if [[ -z $bazenv ]]; then		
@@ -107,7 +98,7 @@ if [[ -z $bazinga_custom_json ]]; then
 	bazinga_custom_json="settings.json"
 fi
 
-txtrst
+bazinga_txtrst
 
 printf "
 ${BBluexx}\e[33m☠ ☠ ☠ global namespace pollution  ☠ ☠ ☠ 
@@ -128,7 +119,7 @@ ${BBluexx}\e[33m☠ ☠ ☠ global namespace pollution  ☠ ☠ ☠
 function bazinga_init {
 
 	if [ ! -d $bazinga_directory ]; then	
-		txtstr
+		bazinga_txtstr
 		echo "
 -----------------------------------------
 « bazinga? nope! let's build grounds 4 » 
@@ -199,7 +190,7 @@ function bazinga_init {
 	bazinga_custom="${bazinga_custom}.tmp"
 
 	# speak out loud
-	title "script configuration"
+	bazinga_title "script configuration"
 	echo ""
 	echo "directory: 	$bazinga_directory"
 	echo "current: 	$(pwd)"
@@ -209,7 +200,7 @@ function bazinga_init {
 	# run current (set default values -> see loop)
 	if [ -f $bazinga_save ]; then	
 
-		title "current configuration"
+		bazinga_title "current configuration"
 		echo ""
 
 		cat $bazinga_save
@@ -227,7 +218,7 @@ function bazinga_init {
 	chmod a+x $bazinga_custom
 
 	# ready for change
-	title "setup new configuration"
+	bazinga_title "setup new configuration"
 	echo ""
 
 }
@@ -272,12 +263,12 @@ function bazinga_readline {
 function bazinga_flush {
 
 	# let the hamsters dance... *
-	title "review new configuration"
+	bazinga_title "review new configuration"
 	echo ""
 
 	cat $bazinga_custom
 
-	title "confirm new configuration"
+	bazinga_title "confirm new configuration"
 
 	printf "
 Press \e[33mEnter\e[00m to write changes to disk or \e[33m^C\e[00m to abort
@@ -288,7 +279,7 @@ Destination: \e[32m$(pwd)/$bazinga_save\e[00m"
 	# write to disk
 	read -e xxx || exit
 
-	title "saving new configuration"
+	bazinga_title "saving new configuration"
 	echo ""
 	echo "Writing changes to disk..."
 
@@ -304,7 +295,7 @@ Destination: \e[32m$(pwd)/$bazinga_save\e[00m"
 	unset bazinga_save
 
 	# in beauty we ...
-	title "loading new configuration"	
+	bazinga_title "loading new configuration"	
 	source $bazinga_custom
 
 }
