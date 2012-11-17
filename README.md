@@ -47,7 +47,7 @@ bazinga_custom=".bazinga/settings.sh"
 bazinga_custom_json="settings.json"
 
 function bazinga_gather(){
-		bazinga_input "github_repository" "github_repository"
+	bazinga_input "github_repository" "github_repository"
 	bazinga_input "github_user_name" "github_user_name"
 	bazinga_input "github_user_pass" "github_user_pass"
 	bazinga_input "github_user_email" "github_user_email"
