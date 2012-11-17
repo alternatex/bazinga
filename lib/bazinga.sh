@@ -146,7 +146,9 @@ function bazinga_init {
 
 		# write header
 		echo '#!/usr/bin/env bash' > $bazinga_configure
-		echo '' >> $bazinga_configure
+		echo "" >> $bazinga_configure
+		
+		# variables
 		echo 'bazeninga="BAZINGA"' >> $bzinga_configure
 		echo "bazinga_directory=\"${bazinga_directory}\"" >> $bazinga_configure
 		echo "bazinga_protect=\"${bazinga_protect}\"" >> $bazinga_configure
@@ -154,18 +156,22 @@ function bazinga_init {
 		echo "bazinga_namespace=\"${bazinga_namespace}\"" >> $bazinga_configure		
 		echo "bazinga_custom=\"${bazinga_custom}\"" >> $bazinga_configure	
 		echo "bazinga_custom_json=\"${bazinga_custom_json}\"" >> $bazinga_configure	
-		echo '' >> $bazinga_configure
+		
+		# custom configuration setup
+		echo "" >> $bazinga_configure
 		echo "function bazinga_gather(){" >> $bazinga_configure	
 		echo "	bazinga_input \"github_repository\" \"github_repository\"" >> $bazinga_configure					
 		echo "	bazinga_input \"github_user_name\" \"github_user_name\"" >> $bazinga_configure	
 		echo "	bazinga_input \"github_user_pass\" \"github_user_pass\"" >> $bazinga_configure	
 		echo "	bazinga_input \"github_user_email\" \"github_user_email\"" >> $bazinga_configure			
 		echo "}" >> $bazinga_configure	
-		echo '' >> $bazinga_configure
+		
+		# custom post processing (eg. setup github credentials, ..)
+		echo "" >> $bazinga_configure
 		echo "function bazinga_postprocess(){" >> $bazinga_configure	
-		echo "echo \"machine github.com\" >> ~/.netrc" >> $bazinga_configure
-		echo "echo \"login \${github_user_name}\" >> ~/.netrc" >> $bazinga_configure
-		echo "echo \"password \${github_user_pass}\" >> ~/.netrc" >> $bazinga_configure
+		echo "	echo \"machine github.com\" >> ~/.netrc" >> $bazinga_configure
+		echo "	echo \"login \${github_user_name}\" >> ~/.netrc" >> $bazinga_configure
+		echo "	echo \"password \${github_user_pass}\" >> ~/.netrc" >> $bazinga_configure
 		echo "}" >> $bazinga_configure	
 
 		# make executable

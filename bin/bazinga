@@ -32,7 +32,7 @@ bazinga_gather
 # replace configurations - write new configuration to disk (actually replacing conf w/ temporary one)
 bazinga_flush
 
-# postprocessing
+# post processing (apply configuration..)
 bazinga_postprocess
 
 # dynamic export / convert environment variables as json w/ php-helper
