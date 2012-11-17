@@ -158,7 +158,14 @@ function bazinga_init {
 		echo "function bazinga_gather(){" >> $bazinga_configure	
 		echo "	bazinga_input \"github_repository\" \"github_repository\"" >> $bazinga_configure					
 		echo "	bazinga_input \"github_user_name\" \"github_user_name\"" >> $bazinga_configure	
+		echo "	bazinga_input \"github_user_pass\" \"github_user_pass\"" >> $bazinga_configure	
 		echo "	bazinga_input \"github_user_email\" \"github_user_email\"" >> $bazinga_configure			
+		echo "}" >> $bazinga_configure	
+		echo '' >> $bazinga_configure
+		echo "function bazinga_postprocess(){" >> $bazinga_configure	
+		echo "echo \"machine github.com\" >> ~/.netrc" >> $bazinga_configure
+		echo "echo \"login \${github_user_name}\" >> ~/.netrc" >> $bazinga_configure
+		echo "echo \"password \${github_user_pass}\" >> ~/.netrc" >> $bazinga_configure
 		echo "}" >> $bazinga_configure	
 
 		# make executable
