@@ -77,6 +77,11 @@ Usage
 bazinga
 ```
 
+Roadmap
+-------------
+- auto-update
+- custom directory 
+
 License
 -------------
 Released under two licenses: new BSD, and MIT. You may pick the
