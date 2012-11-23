@@ -10,27 +10,23 @@ Prerequisites
 Installation 
 -------------
 
-**Fetch sources** [https://github.com/alternatex/bazinga/archive/master.zip](https://github.com/alternatex/bazinga/archive/master.zip)
+Setup
+-------------
 
-**Extract to** /usr/bin/bazinga
+You can install this via the command line with either `curl` or `wget`.
 
-**Update environment variables**
+via `curl`
 
-```bash
-BAZINGAPATH=$(cat <<'BAZINGAPATH'    
+`curl -L https://github.com/alternatex/bazinga/raw/master/install.sh | sh`
 
-# Bazinga
-export PATH=/usr/bin/bazinga/bin:$PATH
+via `wget`
 
-BAZINGAPATH
-)
-echo "$BAZINGAPATH" >> ~/.zshrc
-```
+`wget --no-check-certificate https://github.com/alternatex/bazinga/raw/master/install.sh -O - | sh`
 
 Usage
 -------------
 
-**One for all**
+**- { 1 : 4 : ∞ } -**
 
 ```bash
 bazinga
