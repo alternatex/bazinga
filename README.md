@@ -10,9 +10,6 @@ Prerequisites
 Installation 
 -------------
 
-Setup
--------------
-
 You can install this via the command line with either `curl` or `wget`.
 
 via `curl`
@@ -29,11 +26,9 @@ Checks for existance o directory `.bazinga` within the current working directory
 
 ### Bootstrap 
 
-<<<<<<< HEAD
 **- { 1 : 4 : ∞ } -**
-=======
+
 Create directory .bazinga with defaults:
->>>>>>> 364e6c6b71ca0026017ee4e321117eefb713066e
 
 **configure.sh**
 ```bash
