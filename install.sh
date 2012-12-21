@@ -6,21 +6,27 @@ cd ~
 # fetch sources
 git clone https://github.com/alternatex/bazinga.git .bazingax
 
-# update shell configuration
-if [ -f ~/.zshrc ]; then 
-	echo "# bazinga" >> ~/.zshrc
-	echo "export PATH=~/.bazingax/bin:$PATH" >> ~/.zshrc
-	. ~/.zshrc
-fi
+# shell configuration file (TODO: combine with $SHELL environment variable)
+shellcfg=""
 
+# BASH
 if [ -f ~/.bashrc ]; then 
-	echo "# bazinga" >> ~/.bashrc
-	echo "export PATH=~/.bazingax/bin:$PATH" >> ~/.bashrc
-	. ~/.bashrc
+	shellcfg="$HOME/.bashrc"
 fi
 
-if [ -f ~/.profile ]; then 
-	echo "# bazinga" >> ~/.profile
-	echo "export PATH=~/.bazingax/bin:$PATH" >> ~/.profile
-	. ~/.profile
+# ZSH
+if [ -f ~/.zshrc ]; then 
+	shellcfg="$HOME/.zshrc"
 fi
+
+# ?
+if [ -f ~/.profile ]; then 
+	shellcfg="$HOME/.profile"
+fi
+
+# update shell configuration
+echo "# bazinga" >> $shellcfg
+echo "export PATH=~/.bazingax/bin:$PATH" >> $shellcfg
+
+# apply 
+. $shellcfg
