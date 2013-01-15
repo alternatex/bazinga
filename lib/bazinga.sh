@@ -136,7 +136,7 @@ function bazinga_init {
 		echo 'deny from all' >> $bazinga_protect
 
 		# write header
-		echo '#!/usr/bin/env bash' > $bazinga_configure
+		echo '#!/bin/bash' > $bazinga_configure
 		echo "" >> $bazinga_configure
 		
 		# variables

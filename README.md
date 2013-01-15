@@ -12,21 +12,15 @@ Installation
 
 You can install this through [shinst](https://github.com/alternatex/shinst):
 
-`shinst install alternatex/bazinga -n bazinga`
+`shinst install alternatex/bazinga`
 
-Methodology
+Bootstrap
 -------------
-Checks for existance o directory `.bazinga` within the current working directory. 
 
-### Bootstrap 
+### .bazingac/configure.sh
 
-**- { 1 : 4 : ∞ } -**
-
-Create directory .bazinga with defaults:
-
-**configure.sh**
 ```bash
-#!/usr/bin/env bash
+#!/bin/bash
 
 bazinga_directory=".bazingac"
 bazinga_protect=".htaccess"
@@ -37,25 +31,16 @@ bazinga_custom_json="settings.json"
 
 function bazinga_gather(){
 	bazinga_input "github_repository" "github_repository"
-	bazinga_input "github_user_name" "github_user_name"
-	bazinga_input "github_user_pass" "github_user_pass"
+	bazinga_input "github_user_name"  "github_user_name"
+	bazinga_input "github_user_pass"  "github_user_pass"
 	bazinga_input "github_user_email" "github_user_email"
 }
 
 function bazinga_postprocess(){
-	echo "machine github.com" >> ~/.netrc
-	echo "login ${github_user_name}" >> ~/.netrc
-	echo "password ${github_user_pass}" >> ~/.netrc
+	echo "machine github.com" 			>> 	~/.netrc
+	echo "login ${github_user_name}" 	>> 	~/.netrc
+	echo "password ${github_user_pass}" >> 	~/.netrc
 }
-```
-**settings.sh**
-```bash
-#!/usr/bin/env bash
-
-export bazinga_github_repository="";
-export bazinga_github_user_name="";
-export bazinga_github_user_pass="";
-export bazinga_github_user_email="";
 ```
 
 ### Execution
