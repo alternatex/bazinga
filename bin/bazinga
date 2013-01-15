@@ -12,7 +12,7 @@ BAZINGA_INSTALL="`which bazinga 2>&1`"
 BAZINGA_INSTALL_DIR="`dirname $BAZINGA_INSTALL 2>&1`/.."
 
 # include configuration (if any)
-source .bazinga/configure.sh
+source .bazingac/configure.sh
 
 # include core
 source $BAZINGA_INSTALL_DIR/lib/bazinga.sh
@@ -21,7 +21,7 @@ source $BAZINGA_INSTALL_DIR/lib/bazinga.sh
 bazinga_init $bazinga_namespace
 
 # include configuration (default if not set previously)
-source .bazinga/configure.sh
+source .bazingac/configure.sh
 
 # shizzl. don't look. todo » solve overwrite data-loss » could be more sexy, right?
 bazinga_custom="${bazinga_custom}.tmp"

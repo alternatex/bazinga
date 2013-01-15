@@ -5,20 +5,14 @@ A commandline configuration utility
 
 Prerequisites
 -------------
-**OS:** Unix
+Unix-OS
 
 Installation 
 -------------
 
-You can install this via the command line with either `curl` or `wget`.
+You can install this through [shinst](https://github.com/alternatex/shinst):
 
-via `curl`
-
-`curl -L https://github.com/alternatex/bazinga/raw/master/install.sh | sh`
-
-via `wget`
-
-`wget --no-check-certificate https://github.com/alternatex/bazinga/raw/master/install.sh -O - | sh`
+`shinst install alternatex/bazinga -n bazinga`
 
 Methodology
 -------------
@@ -34,11 +28,11 @@ Create directory .bazinga with defaults:
 ```bash
 #!/usr/bin/env bash
 
-bazinga_directory=".bazinga"
+bazinga_directory=".bazingac"
 bazinga_protect=".htaccess"
 bazinga_configure="configure.sh"
 bazinga_namespace="bazinga_"
-bazinga_custom=".bazinga/settings.sh"
+bazinga_custom=".bazingac/settings.sh"
 bazinga_custom_json="settings.json"
 
 function bazinga_gather(){
@@ -76,6 +70,11 @@ Usage
 ```bash
 bazinga
 ```
+
+Changelog
+-------------
+**1.1.0:**<br/>
+* installation through `shinst` 
 
 Roadmap
 -------------

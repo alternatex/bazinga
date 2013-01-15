@@ -75,7 +75,7 @@ fi
 
 # internals
 if [[ -z $bazinga_directory ]]; then		
-	bazinga_directory=".bazinga"
+	bazinga_directory=".bazingac"
 fi
 
 if [[ -z $bazinga_protect ]]; then		
@@ -91,7 +91,7 @@ if [[ -z $bazinga_namespace ]]; then
 fi
 
 if [[ -z $bazinga_custom ]]; then		
-	bazinga_custom=".bazinga/settings.sh"
+	bazinga_custom=".bazingac/settings.sh"
 fi
 
 if [[ -z $bazinga_custom_json ]]; then		
