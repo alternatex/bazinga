@@ -66,8 +66,6 @@ echo "--------------------------------------------------------------------------
 
 bazinga_txtrst
 
-bazinga_title "script globals"
-
 # environment variables
 if [[ -z $bazenv ]]; then		
 	bazenv="BAZINGA"
@@ -99,21 +97,6 @@ if [[ -z $bazinga_custom_json ]]; then
 fi
 
 bazinga_txtrst
-
-printf "
-${BBluexx}\e[33m☠ ☠ ☠ global namespace pollution  ☠ ☠ ☠ 
-
-\e[32mprefix\e[0m 
-${bazinga_namespace}
-
-\e[32mvariables\e[0m 
-current, custom, name, save
-
-\e[32mfunctions\e[0m 
-init, new, readline, flush
-
-${BBluexx}\e[33m☠ ☠ ☠ global namespace pollution  ☠ ☠ ☠ 
-"
 
 # setup helpers
 function bazinga_init {
@@ -297,5 +280,4 @@ Destination: \e[32m$(pwd)/$bazinga_save\e[00m"
 	# in beauty we ...
 	bazinga_title "loading new configuration"	
 	source $bazinga_custom
-
 }
