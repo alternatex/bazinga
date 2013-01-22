@@ -11,8 +11,13 @@ BAZINGA_HOME="`dirname $1`/.." && cd $BAZINGA_HOME
 BAZINGA_INSTALL="`which bazinga 2>&1`"
 BAZINGA_INSTALL_DIR="`dirname $BAZINGA_INSTALL 2>&1`/.."
 
-# include configuration (if any)
-source .bazingac/configure.sh
+# preset avail?
+if [[ -a ".bazingac/configure.sh" ]]
+  then 
+  
+	# include configuration
+	source .bazingac/configure.sh
+fi
 
 # include core
 source $BAZINGA_INSTALL_DIR/lib/bazinga.sh
