@@ -5,7 +5,8 @@ A commandline configuration utility
 
 Prerequisites
 -------------
-Unix-OS
+
+Unix OS
 
 Installation 
 -------------

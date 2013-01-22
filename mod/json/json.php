@@ -1,6 +1,6 @@
 <?php namespace bazinga;
 
-// include helpers - pretty json formatting helper (borrowed from: http://???)
+// include helpers - pretty json formatting helper (borrowed from: http://recursive-design.com/blog/2008/03/11/format-json-with-php/)
 function formatJSON($json) {
 
     $result      = '';
@@ -66,8 +66,8 @@ $settings['FILE_CONTENTS_AUTOMATICALLY_GENERATED_BY_BAZINGA'] = 'DO *NOT* EDIT T
 
 // iterate environment variables collect by namespace
 foreach($_SERVER as $key => $value){ 
-    if(substr($key, 0, strlen($prefix))==$prefix) {     
-        $settings[substr($key, strlen($prefix))] = $value;
+    if(($substr=substr($key, 0, strlen($prefix)))==$prefix) {     
+        $settings[$substr] = $value;
     }
 }
 
