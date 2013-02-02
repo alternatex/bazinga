@@ -67,7 +67,7 @@ $settings['FILE_CONTENTS_AUTOMATICALLY_GENERATED_BY_BAZINGA'] = 'DO *NOT* EDIT T
 // iterate environment variables collect by namespace
 foreach($_SERVER as $key => $value){ 
     if(($substr=substr($key, 0, strlen($prefix)))==$prefix) {     
-        $settings[$substr] = $value;
+        $settings[str_replace($substr,'',$key)] = $value;
     }
 }
 
