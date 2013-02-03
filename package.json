@@ -20,5 +20,11 @@
   ],
   "amd": {},
   "engines": {},
-  "dependencies": {}
+  "dependencies": {},
+  "volo": {
+      "baseUrl": "",
+      "url": "",
+      "dependencies": {},
+      "type": ""
+  }  
 }
